@@ -1,11 +1,11 @@
-words = open("slowa.txt", "r")
+with open('slowa.txt', 'r') as f:
 
+    ending_with_a = 0
 
-ending_with_a = 0
-for line in words.readlines():
-    for word in line.split(" "):
-        if word[-1] == "A":
-            ending_with_a += 1
+    for line in f.readlines():
+        for word in line.strip().split(" "):
+            if word.endswith("A"):
+                ending_with_a += 1
 
-print(ending_with_a)
-words.close()
+    print(ending_with_a)
+
